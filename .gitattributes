@@ -1,0 +1,4 @@
+models filter=lfs diff=lfs merge=lfs -text
+docs filter=lfs diff=lfs merge=lfs -text
+models/gpt4all-converted[[:space:]](1).bin filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-8df6bb3f8ebee11367e29c868fa43870ec0ef54c.pack filter=lfs diff=lfs merge=lfs -text

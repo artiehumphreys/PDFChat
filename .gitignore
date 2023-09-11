@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+#big folders
+models/
+
+>>>>>>> 216f06d (initial commit)
 # Distribution / packaging
 .Python
 build/
