@@ -16,7 +16,7 @@ import faiss
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
-llms = ['gpt2-large', 'nomic-ai/gpt4all-j', 'tiiuae/falcon-7b-instruct', 'openlm-research/open_llama_3b']
+llms = ['gpt2-large', 'tiiuae/falcon-7b-instruct', 'openlm-research/open_llama_3b']
 
 #embedding model options:
 MPNET_MODEL = "sentence-transformers/all-mpnet-base-v2"
@@ -29,7 +29,7 @@ model_name = MULTIQA_MODEL
 #Create the HuggingFaceEmbeddings object
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 
-inp = input("Pick which LLM to use. Type 0 for GPT-2, type 1 for GPT-J-Groovy, type 2 for Falcon-7B (Recommended for Document QA and fast responses), and type 3 for OpenLLama" + "\n")
+inp = input("Pick which LLM to use. Type 0 for GPT-2, type 1 for Falcon-7B (Recommended for Document QA and fast responses), and type 2 for OpenLLama" + "\n")
 
 if (not inp.strip().isdigit()):
     inp = input("Please enter a valid number here: ")
@@ -43,7 +43,7 @@ repo_id = llms[int_inp]
 
 callback_manager = AsyncCallbackManager([StreamingStdOutCallbackHandler()])
 
-if (int_inp == 1):
+if (int_inp == 4):
     gpt4all_path = './test/models/ggml-gpt4all-j-v1.3-groovy.bin'
     llm = GPT4All(model=gpt4all_path, callback_manager=callback_manager, verbose=True)
 else:   
